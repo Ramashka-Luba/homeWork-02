@@ -3,9 +3,16 @@
 }
 
 .hw {
-
+    padding-inline: 30px;
+    border-bottom: 1px solid #bdbcbc;
 }
 
 .hwTitle {
-
+    display: flex;
+    align-items: end;
+    min-height: var(--header_height);
+    font-size: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #bdbcbc;
 }
