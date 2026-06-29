@@ -4,6 +4,7 @@
 
 .inputAndButtonContainer {
     display: flex;
+    gap: 10px;
 }
 
 .error {
@@ -11,16 +12,22 @@
 }
 
 .input {
+    height: 40px;
+    width: 200px;
+    border-radius: 10px;
+    border: 1px solid lightgray;
 }
 
 .input:focus {
 }
 
 .errorInput {
+    border: 1px solid red;
 }
 
 .button {
-    padding: 8px 24px;
+    height: 40px;
+    padding-inline: 24px;
     font-size: 14px;
     font-weight: 600;
     line-height: 20px;
@@ -42,10 +49,13 @@
 }
 
 .text {
+
     font-size: 14px;
     color: #00000080;
 
 }
 
 .greeting {
+    margin-top: 5px;
+    color: #00000080;
 }
