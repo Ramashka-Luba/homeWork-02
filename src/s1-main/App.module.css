@@ -3,7 +3,7 @@
 }
 
 .hw {
-    padding-inline: 30px;
+    padding: 30px;
     border-bottom: 1px solid #bdbcbc;
 }
 
@@ -12,7 +12,7 @@
     align-items: end;
     min-height: var(--header_height);
     font-size: 20px;
-    margin-bottom: 20px;
-    padding-bottom: 3px;
+    font-weight: 800;
+    padding-bottom: 5px;
     border-bottom: 1px solid #bdbcbc;
 }
