@@ -13,6 +13,6 @@
     min-height: var(--header_height);
     font-size: 20px;
     font-weight: 800;
-    padding-bottom: 5px;
+    padding: 0 30px 5px;
     border-bottom: 1px solid #bdbcbc;
 }
