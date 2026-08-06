@@ -1,9 +1,4 @@
 .select {
-}
-
-.select:focus {
-}
-
-
-.option:hover {
+    padding: 5px;
+    border-radius: 5px;
 }
