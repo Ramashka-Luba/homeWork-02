@@ -1,14 +1,22 @@
 .buttonsContainer {
+    display: flex;
+    gap: 24px;
 }
 
 .clock {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .watch {
+
 }
 
 .watch strong {
+    font-weight: bold;
 }
 
 .more {
+    color: #8a8585;
 }
