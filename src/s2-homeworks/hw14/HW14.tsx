@@ -4,13 +4,15 @@ import s from './HW14.module.css'
 import axios from 'axios'
 import SuperDebouncedInput from './common/c8-SuperDebouncedInput/SuperDebouncedInput'
 import {useSearchParams} from 'react-router-dom'
+import {Simulate} from "react-dom/test-utils";
+import rateChange = Simulate.rateChange;
 
 /*
-* 1 - дописать функцию onChangeTextCallback в SuperDebouncedInput
-* 2 - дописать функцию sendQuery в HW14
-* 3 - дописать функцию onChangeText в HW14
+* 1 - дописать функцию onChangeTextCallback в SuperDebouncedInput +
+* 2 - дописать функцию sendQuery в HW14 +
+* 3 - дописать функцию onChangeText в HW14 +
 * 4 - сделать стили в соответствии с дизайном
-* 5 - добавить HW14 в HW5/pages/JuniorPlus
+* 5 - добавить HW14 в HW5/pages/JuniorPlus +
 * */
 
 const getTechs = (find: string) => {
@@ -34,22 +36,22 @@ const HW14 = () => {
         setLoading(true)
         getTechs(value)
             .then((res) => {
-                // делает студент
-
-                // сохранить пришедшие данные
-
-                //
+                if (res?.data) {
+                    setTechs(res?.data.techs)
+                }
             })
+            .finally((() => {
+                setLoading(false)
+        }))
     }
 
     const onChangeText = (value: string) => {
         setFind(value)
-        // делает студент
-
-        // добавить/заменить значение в квери урла
-        // setSearchParams(
-
-        //
+        if (value) {
+            setSearchParams({find: value})
+        }  else {
+            setSearchParams({})
+        }
     }
 
     useEffect(() => {
