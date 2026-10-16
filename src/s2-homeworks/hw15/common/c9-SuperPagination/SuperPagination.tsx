@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {type ChangeEvent} from 'react'
 import SuperSelect from '../../../hw07/common/c5-SuperSelect/SuperSelect'
 import {Pagination} from '@mui/material'
 import s from './SuperPagination.module.css'
@@ -11,19 +11,23 @@ export type SuperPaginationPropsType = {
     onChange: (page: number, count: number) => void
 }
 
-const SuperPagination: React.FC<SuperPaginationPropsType> = (
-    {
-        page, itemsCountForPage, totalCount, onChange, id = 'hw15',
-    }
-) => {
-    const lastPage = 10 // пишет студент // вычислить количество страниц
+const SuperPagination: React.FC<SuperPaginationPropsType> = ({
+                                                                 page,
+                                                                 itemsCountForPage,
+                                                                 totalCount,
+                                                                 onChange,
+                                                                 id = 'hw15',
+                                                             }) => {
 
-    const onChangeCallback = (event: any, page: number) => {
-        // пишет студент
+    const lastPage = Math.ceil(totalCount / itemsCountForPage) || 1
+
+    const onChangeCallback = (event: ChangeEvent<unknown>, page: number) => {
+        onChange(page, itemsCountForPage)
     }
 
-    const onChangeSelect = (event: any) => {
-        // пишет студент
+    const onChangeSelect = (event: ChangeEvent<HTMLSelectElement>) => {
+        const newCount = +event.currentTarget.value
+        onChange(1, newCount)
     }
 
     return (
@@ -31,7 +35,22 @@ const SuperPagination: React.FC<SuperPaginationPropsType> = (
             <Pagination
                 id={id + '-pagination'}
                 sx={{
-                    // стили для Pagination // пишет студент
+                    '& .MuiPaginationItem-root': {
+                        borderRadius: '4px',
+                        color: '#000000',
+                        fontFamily: 'inherit',
+                        fontWeight: 400,
+                        minWidth: '32px',
+                        height: '32px',
+                    },
+                    '& .Mui-selected': {
+                        backgroundColor: '#0066cc !important',
+                        color: '#ffffff !important',
+                        fontWeight: 'bold',
+                    },
+                    '& .MuiPaginationItem-ellipsis': {
+                        color: '#808080',
+                    }
                 }}
                 page={page}
                 count={lastPage}
